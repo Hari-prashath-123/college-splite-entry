@@ -1,61 +1,41 @@
-import { Card } from "@/components/ui/card";
-import { GraduationCap, Users, BookOpen, Award } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const features = [
-  {
-    icon: GraduationCap,
-    title: "World-Class Education",
-    description: "Access to top-tier faculty and cutting-edge curriculum designed to prepare you for the future.",
-  },
-  {
-    icon: Users,
-    title: "Vibrant Community",
-    description: "Join a diverse community of students from around the world, fostering collaboration and growth.",
-  },
-  {
-    icon: BookOpen,
-    title: "Rich Resources",
-    description: "State-of-the-art facilities, extensive library, and digital resources at your fingertips.",
-  },
-  {
-    icon: Award,
-    title: "Career Success",
-    description: "Comprehensive career support and placement services to help you achieve your goals.",
-  },
-];
+const FeaturesSection = () => (
+  <section className="py-16 bg-muted/50 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-5xl mx-auto">
+      <Card className="shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-primary">About IDCS Portal</CardTitle>
+        </CardHeader>
+        <CardContent className="pt-6 text-muted-foreground space-y-4">
+          <h4 className="text-xl font-semibold text-foreground mb-2 mt-4">Key Features</h4>
+          <ul className="list-disc list-inside space-y-2">
+            <li><strong>Student Portal:</strong> Access dashboard, attendance records...</li>
+            <li><strong>Staff Portal:</strong> Manage class schedules...</li>
+            <li><strong>HOD/AHOD Portal:</strong> Review and approve applications...</li>
+            <li><strong>ATS System:</strong> Advanced resume analysis...</li>
+            <li><strong>PathPilot:</strong> Career guidance...</li>
+            <li><strong>Resume Builder:</strong> Professional resume creation...</li>
+            <li><strong>Feed360:</strong> Comprehensive feedback system...</li>
+          </ul>
+          <h4 className="text-xl font-semibold text-foreground mb-2 mt-4">Technologies Used</h4>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Built with Django framework...</li>
+            <li>Modern responsive design...</li>
+            <li>Secure authentication...</li>
+            <li>Real-time notifications...</li>
+          </ul>
+          <h4 className="text-xl font-semibold text-foreground mb-2 mt-4">Get Started</h4>
+          <p
+            dangerouslySetInnerHTML={{
+              __html:
+                "Click the <strong>Login</strong> button above to access your personalized dashboard. For assistance, please contact the IDCS support team at <code class='bg-muted p-1 rounded-sm text-destructive-foreground'>idcs@krct.ac.in</code>"
+            }}
+          />
+        </CardContent>
+      </Card>
+    </div>
+  </section>
+);
 
-export const FeaturesSection = () => {
-  return (
-    <section className="py-24 px-6 relative">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
-      
-      <div className="container mx-auto relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Why Choose <span className="gradient-text">Our College</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Experience excellence in education with unparalleled opportunities for growth and success.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <Card
-              key={index}
-              className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 bg-card/50 backdrop-blur animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-12 h-12 rounded-lg bg-gradient-hero flex items-center justify-center mb-4">
-                <feature.icon className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+export default FeaturesSection;

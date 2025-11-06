@@ -19,18 +19,14 @@ export const HeroSection = () => {
           {/* Left content */}
           <div className="flex-1 p-8 lg:p-16 relative z-10 flex flex-col justify-center">
             <div className="max-w-2xl animate-fade-in">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                <span className="gradient-text">Interactive 3D</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-blue-600">
+                K.Ramakrishnan College of Technology
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-4">
-                Bring your UI to life with beautiful 3D scenes. Create immersive experiences that capture attention and enhance your design.
-              </p>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight mt-8">
-                Welcome to{" "}
-                <span className="gradient-text">Excellence</span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight mt-8 text-destructive">
+                Autonomous
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
-                Empowering minds, shaping futures. Join our community of learners and discover your potential.
+              <p className="text-lg md:text-xl text-muted-foreground mb-4">
+                IDCS is a comprehensive academic and student services portal designed for K.Ramakrishnan College of Technology.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -39,14 +35,7 @@ export const HeroSection = () => {
                   onClick={() => navigate('/auth')}
                   className="text-lg"
                 >
-                  Get Started
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="text-lg"
-                >
-                  Learn More
+                  Login
                 </Button>
               </div>
             </div>
