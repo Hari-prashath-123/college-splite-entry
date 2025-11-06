@@ -17,7 +17,7 @@ export const HeroSection = () => {
 
         <div className="flex flex-col lg:flex-row h-full min-h-screen">
           {/* Left content */}
-          <div className="flex-1 p-8 lg:p-16 relative z-10 flex flex-col justify-center">
+          <div className="lg:flex-1 p-8 lg:p-16 relative z-10 flex flex-col justify-center">
             <div className="max-w-2xl animate-fade-in">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 <span className="gradient-text">Interactive 3D</span>
@@ -53,11 +53,11 @@ export const HeroSection = () => {
           </div>
 
           {/* Right 3D Scene */}
-          <div className="flex-1 relative min-h-[400px] lg:min-h-screen">
+          <div className="lg:flex-[3] relative min-h-[400px] lg:min-h-screen">
             <div className="absolute inset-0">
               <SplineScene
                 scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className="w-full h-full"
+                className="w-full h-full scale-150"
               />
             </div>
           </div>
