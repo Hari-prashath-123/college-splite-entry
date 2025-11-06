@@ -1,62 +1,75 @@
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
-import heroImage from "@/assets/college-hero.jpg";
+import { SplineScene } from "@/components/ui/splite";
+import { Spotlight } from "@/components/ui/spotlight";
 
 export const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with overlay */}
-      <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt="College campus with students" 
-          className="w-full h-full object-cover"
+      <Card className="w-full min-h-screen bg-background/95 relative overflow-hidden border-0 rounded-none">
+        <Spotlight
+          className="-top-40 left-0 md:left-60 md:-top-20"
+          fill="white"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
-      </div>
 
-      {/* Spotlight effect */}
-      <div className="spotlight-glow absolute top-1/4 right-1/4" />
-      <div className="spotlight-glow absolute bottom-1/4 left-1/4" />
+        <div className="flex flex-col lg:flex-row h-full min-h-screen">
+          {/* Left content */}
+          <div className="flex-1 p-8 lg:p-16 relative z-10 flex flex-col justify-center">
+            <div className="max-w-2xl animate-fade-in">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span className="gradient-text">Interactive 3D</span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground mb-4">
+                Bring your UI to life with beautiful 3D scenes. Create immersive experiences that capture attention and enhance your design.
+              </p>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight mt-8">
+                Welcome to{" "}
+                <span className="gradient-text">Excellence</span>
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
+                Empowering minds, shaping futures. Join our community of learners and discover your potential.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  variant="hero" 
+                  size="lg"
+                  onClick={() => navigate('/auth')}
+                  className="text-lg"
+                >
+                  Get Started
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="text-lg"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="max-w-4xl animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Welcome to{" "}
-            <span className="gradient-text">Excellence</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
-            Empowering minds, shaping futures. Join our community of learners and discover your potential.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              variant="hero" 
-              size="lg"
-              onClick={() => navigate('/auth')}
-              className="text-lg"
-            >
-              Get Started
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="text-lg"
-            >
-              Learn More
-            </Button>
+          {/* Right 3D Scene */}
+          <div className="flex-1 relative min-h-[400px] lg:min-h-screen">
+            <div className="absolute inset-0">
+              <SplineScene
+                scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"
+                className="w-full h-full"
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-foreground/20 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-foreground/20 rounded-full" />
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
+          <div className="w-6 h-10 border-2 border-foreground/20 rounded-full flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-foreground/20 rounded-full" />
+          </div>
         </div>
-      </div>
+      </Card>
     </section>
   );
 };
