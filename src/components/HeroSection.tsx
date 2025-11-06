@@ -56,7 +56,7 @@ export const HeroSection = () => {
           <div className="flex-1 relative min-h-[400px] lg:min-h-screen">
             <div className="absolute inset-0">
               <SplineScene
-                scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"
+                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
                 className="w-full h-full"
               />
             </div>
