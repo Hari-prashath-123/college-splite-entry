@@ -6,6 +6,8 @@ import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { SplineScene } from "@/components/ui/splite";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -21,7 +23,9 @@ export default function Auth() {
     };
 
     return (
-  <div className="min-h-screen flex items-center justify-center relative overflow-hidden px-6 py-12">
+  <div className="min-h-screen flex flex-col">
+    <Header />
+    <div className="flex-grow flex items-center justify-center relative overflow-hidden px-6 py-12">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
         <div className="spotlight-glow absolute top-1/4 right-1/4" />
@@ -40,8 +44,8 @@ export default function Auth() {
         {/* Layout: Left (Login), Right (Robot) */}
   <div className="flex w-full max-w-5xl min-h-[600px] items-center justify-center relative z-10">
           {/* Left: Auth Card */}
-          <div className="flex-1 flex items-center justify-center">
-            <Card className="w-full max-w-md p-8 border-border/50 bg-card/80 backdrop-blur shadow-xl">
+          <div className="flex-1 flex items-center justify-center lg:justify-start py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+            <Card className="w-full max-w-md p-8 border-border/50 bg-card/80 backdrop-blur shadow-xl ml-8 md:ml-16 lg:ml-24">
               <div className="text-center mb-8">
                 <h1 className="text-3xl font-bold mb-2">
                   {isLogin ? "Welcome Back" : "Join Us"}
@@ -102,15 +106,15 @@ export default function Auth() {
             </Card>
           </div>
           {/* Right: Robot Spline Scene */}
-          <div className="flex-1 flex items-center justify-center min-h-[400px]">
-            <div className="w-full h-[400px] md:h-[500px] lg:h-[600px]">
-              <SplineScene
-                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className="w-full h-full"
-              />
-            </div>
+          <div className="flex-1 h-full flex items-stretch justify-center">
+            <SplineScene
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full min-h-screen"
+            />
           </div>
         </div>
       </div>
+    <Footer />
+  </div>
     );
 }

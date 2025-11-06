@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import krctLogo from "@/assets/krct-logo.png";
 import eLogo from "@/assets/e-logo.png";
 import nbaLogo from "@/assets/nba-logo.png";
 import tneaLogo from "@/assets/tnea-logo.png";
 
 const Header = () => {
+  const location = useLocation();
+  const isAuthPage = location.pathname === "/auth";
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-3">
@@ -42,7 +44,11 @@ const Header = () => {
         {/* Right Section: Login Button */}
         <div>
           <Button asChild>
-            <Link to="/auth">Login</Link>
+            {isAuthPage ? (
+              <Link to="/">Home</Link>
+            ) : (
+              <Link to="/auth">Login</Link>
+            )}
           </Button>
         </div>
       </div>
